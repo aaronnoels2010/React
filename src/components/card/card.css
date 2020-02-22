@@ -1,0 +1,13 @@
+.card {
+  background-color: aquamarine;
+  border: 1px solid gray;
+  border-radius: 15px;
+  display: inline-block;
+  flex-basis: 20vw;
+  margin: 5px;
+  transition: flex-basis 2s;
+}
+
+.card:hover {
+  flex-basis: 22vw;
+}
