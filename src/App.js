@@ -9,7 +9,8 @@ class App extends Component {
 
     this.state = {
       monsters: [],
-      searchWord: ""
+      searchWord: "",
+      title: ""
     };
   }
 
@@ -20,18 +21,22 @@ class App extends Component {
   }
 
   search = event => {
-    this.setState({ searchWord: event.target.value });
+    this.setState({
+      searchWord: event.target.value,
+      title: event.target.value
+    });
   };
 
   render() {
-    const { monsters, searchWord } = this.state;
-    const filteredMonsters = monsters.filter(monster =>
-      monster.name.toLowerCase().match(searchWord.toLowerCase())
-    );
+    const { monsters, title } = this.state;
+    // const filteredMonsters = monsters.filter(monster =>
+    //   monster.name.toLowerCase().match(searchWord.toLowerCase())
+    // );
     return (
       <div className="App">
+        <h1>{title}</h1>
         <SearchBox placeholder="Search monsters" handleSearch={this.search} />
-        <CardList monsters={filteredMonsters} />
+        <CardList monsters={monsters} />
       </div>
     );
   }
